@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-export default function SearchForm() {
-  const [searchTerm, setSearchTerm] = useState("");
+export default function SearchForm({ searchTerm, onSearch }) {
   const [searchFieldValue, setSearchFieldValue] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSearchTerm(searchFieldValue);
+    onSearch(searchFieldValue);
   }
 
   return (
