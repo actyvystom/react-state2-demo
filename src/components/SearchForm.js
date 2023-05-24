@@ -1,8 +1,12 @@
 export default function SearchForm({ searchTerm, onSearch }) {
+  // declare handler function for our form submit event
   function handleSubmit(event) {
+    // prevent default form submit action
     event.preventDefault();
+    /* Alternative to get the value from our form element
     // const formElements = event.target.elements;
-    // formElements.searchTerm.value
+    // formElements.searchTerm.value;
+    */
     const newData = new FormData(event.target);
     const data = Object.fromEntries(newData);
     onSearch(data.searchTerm);
