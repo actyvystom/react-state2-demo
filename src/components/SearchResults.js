@@ -29,6 +29,7 @@ const topics = [
 ];
 
 export default function SearchResults({ searchTerm }) {
+  // use the filter array method to find the searchTerm in our topics array and store it in results variable
   const results = topics.filter((topic) => topic.includes(searchTerm));
 
   if (!searchTerm || !results.length) {
@@ -37,6 +38,7 @@ export default function SearchResults({ searchTerm }) {
 
   return (
     <ul>
+    {/* use map array method to display the list of search results found for our searchTerm */}
       {results.map((result) => (
         <li key={result}>{result}</li>
       ))}
